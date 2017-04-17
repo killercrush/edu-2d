@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>РГР Компьютерная графика</title>
+</head>
+
+<body>
+    <div style="margin: 0 auto; display: table">
+        <h2 style="color: #222426; font-family: Open Sans, sans-serif">РГР по компьютерной графике</h2>
+        <div style="margin: 0 0 10px 0; float: left; padding: 15px; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);">
+            <label style="color: #66b3ff; font-size: 20px; font-family: Verdana" for="x">X</label>
+            <input id="x" type="range" min="0" max="200" name="" value="50" oninput="redraw()"/>
+            <label style="color: #b3ff66; font-size: 20px; font-family: Verdana" for="y">Y</label>
+            <input id="y" type="range" min="0" max="200" name="" value="50" oninput="redraw()"/>
+            <label style="color: #ff6666; font-size: 20px; font-family: Verdana" for="z">Z</label>
+            <input id="z" type="range" min="0" max="200" name="" value="50" oninput="redraw()"/>
+            <!--	<button id="set_coord" onclick="draw_complex()">Установить координаты</button>-->
+            <!--	<button id="izom" onclick="draw_isometric()">Аксонометрия</button>-->
+        </div>
+        <div style="margin: 0 0 10px 15px; float: left; padding: 15px; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);">
+            <label style="color: #66b3ff; font-size: 20px; font-family: Verdana" for="c_x">X</label>
+            <input id="c_x" type="range" min="0" max="190" name="" value="75" oninput="redraw()"/>
+            <label style="color: #b3ff66; font-size: 20px; font-family: Verdana" for="c_y">Y</label>
+            <input id="c_y" type="range" min="0" max="190" name="" value="75" oninput="redraw()"/>
+            <label style="color: #ff6666; font-size: 20px; font-family: Verdana" for="c_z">Z</label>
+            <input id="c_z" type="range" min="0" max="190" name="" value="75" oninput="redraw()"/>
+        </div>
+        <div style="margin: 0 0 10px 15px; float: left; padding: 8px; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);">
+          <input type="radio" name="prjection_type" id="ortog" value="Ортогональная" checked="checked" onchange="redraw()" />
+          <label style="color: #222426; font-size: 16px; font-family: Verdana" for="ortog">Ортогональная</label><br>
+          <input type="radio" name="prjection_type" id="persp" value="Перспективная" onchange="redraw()" />
+          <label style="color: #222426; font-size: 16px; font-family: Verdana" for="persp">Перспективная</label>
+        </div>
+        <br>
+        <canvas id="complex" width="600" height="600" style="box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); width: 600px; height: 600px; float: left;"></canvas>
+        <canvas id="isometric" width="600" height="600" style="box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); width: 600px; height: 600px; float: left; margin-left: 10px;"></canvas>
+
+    </div>
+</body>
+<script src="src/numbers.min.js"></script>
+<script src="script.js"></script>
+</html>
